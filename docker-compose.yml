@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  nginx:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3010:80"
+
