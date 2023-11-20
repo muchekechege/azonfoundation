@@ -15,7 +15,7 @@ chmod +x ~/websites/azonfoundation/ssl/renew.sh
 
 
 wait
-cron_job="* * * * * ~/website/azonfoundation/redeploy/redeploy.sh" #cron job for redeployment
+cron_job="* * * * * bash ~/website/azonfoundation/redeploy/redeploy.sh" #cron job for redeployment
 (crontab -l; echo "$cron_job") | crontab -
 echo "$cron_job"
 
@@ -34,7 +34,7 @@ wait
 #install ssl cerificate
 ./azonfoundation/ssl/ssl.sh
 wait
-cron_job="0 0 1 */3 * ~/website/azonfoundation/ssl/renew.sh" #cron job for ssl renew
+cron_job="0 0 1 */3 * bash ~/website/azonfoundation/ssl/renew.sh" #cron job for ssl renew
 (crontab -l; echo "$cron_job") | crontab -
 echo "$cron_job"
 
